@@ -1,31 +1,108 @@
 <html>
-    <head>
-        
-    </head>
-    <body>
-        <!-- <div style="display:flex"> -->
-            
-            <!-- <div> -->
-            <svg id="svg" width="1000" height="1000" style="border:1px solid black" viewBox="-500 -500 1000 1000">
-                <!-- <circle id="circle" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /> -->
-                
-            </svg>
-            <!-- <div style="display: flex"> -->
-            <!-- <div> -->
-            <input type="range" id="hSpacing" name="hSpacing" min="1" max="500" value="50" step="1"/>
-        <!-- </div><div> -->
-            <input type="range" id="angChange" name="angChange" min="-.5" max=".5" value=".1" step=".0001"/>
-        <!-- </div> -->
-            <input type="range" id="vAng" name="vAng" min="0.001" max=".5" value=".25" step=".0001"/>
-            <input type="range" id="iterations" name="iterations" min="2" max="10" value="4" step="1"/>
-            <input type="range" id="n" name="n" min="1" max="10" value="4" step="1"/>
-            <input type="range" id="l1" name="l1" min="1" max="200" value="50" step="1"/>
-            <input type="range" id="l2" name="l2" min="1" max="200" value="50" step="1"/>
-            <input type="range" id="l3" name="l3" min="1" max="200" value="50" step="1"/>
-            <input type="range" id="l5" name="l5" min="1" max="200" value="50" step="1"/>
-            <!-- </div> -->
-        <!-- </div> -->
-            <script src="./main.js"></script>
-    </body>
-    
+  <head>
+    <style>
+      body {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+      }
+      #app {
+        display: flex;
+        justify-content: center;
+      }
+      #sliders {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 10px;
+      }
+      #svg {
+        height: calc(100vh - 18px);
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+
+      input[type="range"] {
+        accent-color: limegreen;
+      }
+
+      .ribbon {
+        margin: 0;
+        padding: 0;
+        background: green;
+        color: white;
+        padding: 1em 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(30%) translateY(0%) rotate(45deg);
+        transform-origin: top left;
+      }
+      .ribbon:before,
+      .ribbon:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        margin: 0 -1px;
+        width: 100%;
+        height: 100%;
+        background: green;
+      }
+      .ribbon:before {
+        right: 100%;
+      }
+
+      .ribbon:after {
+        left: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <div> -->
+      <svg id="svg" viewBox="-500 -500 1000 1000">
+        <!-- <circle id="circle" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /> -->
+      </svg>
+      <div id="sliders">
+        <label>
+          h spacing<br />
+          <input type="range" id="hSpacing" name="hSpacing" min="1" max="500" value="50" step="1" />
+        </label>
+        <label>
+          angle change<br />
+          <input type="range" id="angChange" name="angChange" min="-.5" max=".5" value=".1" step=".0001" />
+        </label>
+        <label>
+          v angle<br />
+          <input type="range" id="vAng" name="vAng" min="0.001" max=".5" value=".25" step=".0001" />
+        </label>
+        <label>
+          iterations<br />
+          <input type="range" id="iterations" name="iterations" min="2" max="10" value="4" step="1" />
+        </label>
+        <label>
+          n<br />
+          <input type="range" id="n" name="n" min="1" max="10" value="4" step="1" />
+        </label>
+        <label>
+          l1<br />
+          <input type="range" id="l1" name="l1" min="1" max="200" value="50" step="1" />
+        </label>
+        <label>
+          l2<br />
+          <input type="range" id="l2" name="l2" min="1" max="200" value="50" step="1" />
+        </label>
+        <label>
+          l3<br />
+          <input type="range" id="l3" name="l3" min="1" max="200" value="50" step="1" />
+        </label>
+        <label>
+          l5<br />
+          <input type="range" id="l5" name="l5" min="1" max="200" value="50" step="1" />
+        </label>
+      </div>
+    </div>
+    <div class="ribbon">made by Emmett</div>
+    <script src="./main.js"></script>
+  </body>
 </html>
